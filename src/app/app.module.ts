@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
+import { ProjectItemsService } from "./project-items.service";
 
 @NgModule({
   declarations: [
@@ -11,11 +12,11 @@ import {HttpClientModule} from '@angular/common/http';
     ProjectsComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ProjectItemsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
