@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+interface ItemsResponse {
+  results: string[];
+}
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  results: string[];
 
-  ngOnInit() {
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    // Make the HTTP request:
+    this.http.get<ItemsResponse>('/api/items').subscribe(data => {
+      // Read the result field from the JSON response.
+      this.results = data['results'];
+    });
   }
-
 }
