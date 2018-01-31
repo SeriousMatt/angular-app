@@ -31,12 +31,12 @@
     </tr>
     </thead>
     <tbody>
-    {{ projects | json }}
-    <!--<tr *ngFor="let project of projects;">-->
-      <!--<td>{{project.book_id}}</td>-->
-      <!--<td>{{project.book_title}}</td>-->
-      <!--<td>{{project.book_name}}/td>-->
-    <!--</tr>-->
+    <!--{{ projects.books | json }}-->
+    <tr *ngFor="let project of projects.books;">
+      <td>{{project.book_id}}</td>
+      <td>{{project.book_title}}</td>
+      <td>{{project.author_name}}</td>
+    </tr>
     </tbody>
   </table>
 </div>
