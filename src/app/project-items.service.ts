@@ -11,7 +11,7 @@ export class ProjectItemsService {
 
   constructor(private http: HttpClient) { }
 
-  getBooks(): Observable<any[]>{
+  getProjects(): Observable<any[]>{
     return this.http
       .get(projectItems)
       .catch((error: any) => Observable.throw(error));

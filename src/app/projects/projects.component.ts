@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {ProjectItemsService} from "../project-items.service";
 interface ItemsResponse {
   results: string[];
 }
@@ -11,15 +12,17 @@ interface ItemsResponse {
 })
 export class ProjectsComponent implements OnInit {
 
-  results: string[];
+  projects: any [];
+  title = 'Cord Prototype';
 
-  constructor(private http: HttpClient) {}
+  constructor(private ProjectItemsService: ProjectItemsService) { }
 
-  ngOnInit(): void {
-    // Make the HTTP request:
-    this.http.get<ItemsResponse>('/api/items').subscribe(data => {
-      // Read the result field from the JSON response.
-      this.results = data['results'];
-    });
+  ngOnInit() {
+    this.ProjectItemsService.getProjects()
+      .subscribe(
+        projects => {
+          this.projects = projects;
+        }
+      );
   }
 }

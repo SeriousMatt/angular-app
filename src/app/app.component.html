@@ -1,7 +1,8 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!--&lt;!&ndash;The content below is only a placeholder and can be replaced.&ndash;&gt;-->
 <!--<div style="text-align:center">-->
   <!--<img id="project_page" src="../assets/project_page.png" />-->
-<!--<router-outlet></router-outlet>-->
+<!--&lt;!&ndash;<router-outlet></router-outlet>&ndash;&gt;-->
+  <app-projects></app-projects>
   <!--<h1>-->
     <!--Welcome to {{ title }}!-->
   <!--</h1>-->
@@ -19,24 +20,5 @@
     <!--<h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>-->
   <!--</li>-->
 <!--</ul>-->
+{{ projects.books | json }}
 
-<h1>Book data from the Fake REST API</h1>
-<div *ngIf="projects">
-  <table class="pure-table pure-table-bordered">
-    <thead>
-    <tr>
-      <th>Book Id</th>
-      <th>Book Title</th>
-      <th>Author Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!--{{ projects.books | json }}-->
-    <tr *ngFor="let project of projects.books;">
-      <td>{{project.book_id}}</td>
-      <td>{{project.book_title}}</td>
-      <td>{{project.author_name}}</td>
-    </tr>
-    </tbody>
-  </table>
-</div>

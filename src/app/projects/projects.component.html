@@ -5,3 +5,25 @@
   <li><a href="#contact">Languages</a></li>
   <li><a href="#about">People</a></li>
 </ul>
+
+<!--Add project listing currently in app.component.html-->
+<!--<h1>Project data from the Fake REST API</h1>-->
+<div *ngIf="projects">
+  <table class="pure-table pure-table-bordered">
+    <thead>
+    <tr>
+      <!--<th>Project Id</th>-->
+      <th>Project Name</th>
+      <th>Field Coordinator</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects.projects;">
+      <!--<td>{{project.project_id}}</td>-->
+      <td id="project_name">{{project.project_name}}</td>
+      <td id="last_modified">{{project.last_modified}}</td>
+      <td>{{project.fc_name}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
