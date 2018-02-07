@@ -13,8 +13,11 @@
     <thead>
     <tr>
       <!--<th>Project Id</th>-->
-      <th>Project Name</th>
-      <th>Field Coordinator</th>
+      <th>Project Title</th>
+      <th>Last Modified</th>
+      <th>Languages</th>
+      <th>Type</th>
+      <th>Status</th>
     </tr>
     </thead>
     <tbody>
@@ -22,7 +25,9 @@
       <!--<td>{{project.project_id}}</td>-->
       <td id="project_name">{{project.project_name}}</td>
       <td id="last_modified">{{project.last_modified}}</td>
-      <td>{{project.fc_name}}</td>
+      <td id="languages">{{project.languages}}</td>
+      <td id="types">{{project.type}}</td>
+      <td id="status">{{project.status}}</td>
     </tr>
     </tbody>
   </table>
